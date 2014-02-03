@@ -1,10 +1,11 @@
 \documentclass{article}
 \usepackage{parskip}
+\usepackage[hidelinks]{hyperref}
 
 \begin{document}
 
 \title{\Huge An Interactive Example}
-\author{Gene Dan}
+\author{\Large Gene Dan \vspace{5mm} \\ \href{https://github.com/genedan/}{github.com/genedan} \\ \href{http://www.genedan.com}{genedan.com} }
 \maketitle
 
 \newpage
@@ -60,9 +61,9 @@ We can plot the relative performance of cpus v.s. cache size using R's plotting 
 
 <<fig=TRUE, tidy=FALSE>>=
 plot(factor(cpus$cach), cpus$perf, las=2,
-main="CPU Performance by Cache Size",
-xlab="Cache Size (kilobytes)",
-ylab="Performance Relative to IBM 370/158-3")
+  main="CPU Performance by Cache Size",
+  xlab="Cache Size (kilobytes)",
+  ylab="Performance Relative to IBM 370/158-3")
 @
 
 \newpage
@@ -73,9 +74,9 @@ As before, we can suppress the output:
 
 <<fig=TRUE, eval=FALSE, tidy=FALSE>>=
 plot(factor(cpus$cach), cpus$perf, las=2,
-main="CPU Performance by Cache Size",
-xlab="Cache Size (kilobytes)",
-ylab="Performance Relative to IBM 370/158-3")
+  main="CPU Performance by Cache Size",
+  xlab="Cache Size (kilobytes)",
+  ylab="Performance Relative to IBM 370/158-3")
 @
 
 \newpage
@@ -84,11 +85,11 @@ And likewise we can suppress the code used to generate the plot:
 
 \vspace{1cm}
 
-<<fig=TRUE, echo=FALSE, tidy=FALSE>>=
+<<fig=TRUE, echo=FALSE, eval=TRUE, tidy=FALSE>>=
 plot(factor(cpus$cach), cpus$perf, las=2,
-main="CPU Performance by Cache Size",
-xlab="Cache Size (kilobytes)",
-ylab="Performance Relative to IBM 370/158-3")
+  main="CPU Performance by Cache Size",
+  xlab="Cache Size (kilobytes)",
+  ylab="Performance Relative to IBM 370/158-3")
 @
 
 \end{large}

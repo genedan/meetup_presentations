@@ -5,7 +5,7 @@
 \begin{document}
 
 \title{\Huge Dynamic Documents with R and knitr}
-\author{Gene Dan}
+\author{\Large Gene Dan \vspace{5mm} \\ \href{https://github.com/genedan/}{github.com/genedan} \\ \href{http://www.genedan.com}{genedan.com} }
 \maketitle
 
 \newpage
@@ -23,7 +23,7 @@
 
     \item Literate programming can be implemented via markup language (HTML, \LaTeX, Markdown, etc.), which describes the logic and output of a program written in a general-purpose langauge (C++, Python, Perl, etc.). The program code is embedded within the markup language in a text file. This file can then be compiled into a variety of different formats (.pdf, web pages, slideshows, etc.) for visual display.\\
     
-    \item Today I'll demonstrate one implemntation of literate programming, using \LaTeX as our markup language to describe programs written in R. {\bfseries knitr}, an R package written by Yihui Xie, is used in the translation/compilation of code.
+    \item Today I'll demonstrate one implemntation of literate programming, using \LaTeX\, as our markup language to describe programs written in R. {\bfseries knitr}, an R package written by Yihui Xie, is used to translate and compile the code.
 
 \end{itemize}
 \end{large}
@@ -59,7 +59,7 @@
 
 \begin{itemize}
   \item \LaTeX\, is just a markup language. While it's great at displaying text, it cannot perform complex calculations (well maybe it can if you're extremely creative).
-  \item This limitation causes inexperienced users to produce research output using another language like R, copying and pasting source code and images from another IDE into a .tex file before compiling. This method, in addition to being inefficient, breaks the dependencies between the output and its source.
+  \item This limitation causes inexperienced users to produce research output using another language like R, then copying and pasting source code and images from an IDE into a .tex file before compiling. This method, in addition to being inefficient, breaks the dependencies between the output and its source.
   \item This in turn makes it harder for the reasearcher to effectively communicate their findings and make their reasearch understandable and reproducible by their peers.
 \end{itemize}
 
@@ -123,9 +123,9 @@ Code chunks that appear later in the document can reference objects that appear 
 
 <<fig=TRUE, tidy=FALSE>>=
 plot(factor(cpus$cach), cpus$perf, las=2,
-main="CPU Performance by Cache Size",
-xlab="Cache Size (kilobytes)",
-ylab="Performance Relative to IBM 370/158-3")
+  main="CPU Performance by Cache Size",
+  xlab="Cache Size (kilobytes)",
+  ylab="Performance Relative to IBM 370/158-3")
 @
 
 \newpage
