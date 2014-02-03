@@ -1,0 +1,25 @@
+\documentclass[oneside]{article}
+
+\begin{document}
+
+\title{\Huge Dynamic Documents with R and knitr}
+\author{Gene Dan}
+\maketitle
+
+\newpage
+
+\center{\section*{Literate Programming}}
+
+\newpage
+
+\center{\section*{\LaTeX}}
+
+\newpage
+
+\center{\section*{R}}
+
+\newpage
+
+\center{\section*{knitr}}
+
+\end{document}
