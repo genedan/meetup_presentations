@@ -14,7 +14,7 @@
 \end{center}
 
 \begin{large}
-This is an interactive example where I'll be guiding the audience on how to export visual output from an IDE (like RStudio) to a pdf. We will be using the {\bfseries cpus} dataset from the {\bfseries MASS} package.
+This is an interactive example where I'll be guiding the audience on how to export visual output from an IDE (like RStudio) to a pdf. We will be using the {\bfseries cpus} dataset from the {\bfseries MASS} package. This dataset includes performance metrics for varius cpus.
 
 \vspace{1cm}
 
