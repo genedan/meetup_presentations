@@ -1,4 +1,5 @@
 \documentclass[oneside]{article}
+\usepackage{parskip}
 \usepackage[hidelinks]{hyperref}
 
 \begin{document}
@@ -9,7 +10,9 @@
 
 \newpage
 
-\center{\section*{\LARGE Literate Programming}}
+\begin{center}
+  \section*{\LARGE Literate Programming}
+\end{center}
 
 \vspace{1cm}
 
@@ -27,10 +30,12 @@
 
 \newpage
 
-\center{\section*{\LARGE \LaTeX}}
+\begin{center}
+\section*{\LARGE \LaTeX}
+\end{center}
 
 \begin{large}
-  \LaTeX is a markup language that is popular amongst academics and technical writers for its ability to display mathematical notation:
+  \LaTeX\, is a markup language that is popular amongst academics and technical writers for its ability to display mathematical notation:
   
   \[DB=\frac{1}{n}\sum^n_{i=1}\max_{i\neq j}\left(\frac{\sigma_i+\sigma_j}{d(c_i,c_j)}\right)\]
   \[D = \min_{1\leq i \leq n}\left\{\min_{1\leq j\leq n,i\neq j}\left\{\frac{d(i,j)}{\max_{1\leq k\leq n}d'(k)}\right\}\right\}\]
@@ -46,6 +51,8 @@
   \item This allows people to collaborate over great distances via websites like Stack Exchange or Mathoverflow. This rapidly increases the pace of innovation and discovery.
 \end{itemize}
 
+\vspace{1cm}
+
 \begin{center}
   \bfseries{Disadvantages}
 \end{center}
@@ -60,7 +67,9 @@
   
 \newpage
 
-\center{\section*{\LARGE R}}
+\begin{center}
+  \section*{\LARGE R}
+\end{center}
 
 \begin{large}
   R is an open source statistical programming language.
@@ -76,6 +85,8 @@
   \item R's open source platform makes it easy for anyone to debug and contribute.
 \end{itemize}
 
+\vspace{1cm}
+
 \begin{center}
   \bfseries{Disadvantages}
 \end{center}
@@ -89,11 +100,12 @@
   
 \newpage
 
-\center{\section*{\LARGE knitr}}
+\begin{center}
+  \section*{\LARGE knitr}
+\end{center}
 
 \begin{large}
 
-\flushleft
 knitr is an R package developed by Yihui Xie that integrates LaTeX and R to produce dynamic documents. R is embedded within a \LaTeX document via sections called {\bfseries code chunks}:
 
 \vspace{1cm}
@@ -106,6 +118,8 @@ head(cpus[,c(1,5,8)])
 \newpage
 
 Code chunks that appear later in the document can reference objects that appear in previous code chunks. Here, we produce a figure that references cpus from the package MASS:
+
+\vspace{1cm}
 
 <<fig=TRUE, tidy=FALSE>>=
 plot(factor(cpus$cach), cpus$perf, las=2,
@@ -123,7 +137,7 @@ ylab="Performance Relative to IBM 370/158-3")
 \item In addition to \LaTeX, knitr supports Markdown and HTML as markup languages.
 \end{itemize}
 
-\vspace{2cm}
+\vspace{1cm}
 
 {\bfseries Additional Formats}
 
@@ -135,12 +149,14 @@ ylab="Performance Relative to IBM 370/158-3")
 
 \newpage
 
-\center{\section*{\LARGE Additional Resources}}
+\begin{center}
+  \section*{\LARGE Additional Resources}
+\end{center}
 
 \vspace{1cm}
 \begin{large}
 
-\flushleft
+
 {\bfseries Reproducible Research with R and RStudio - Christopher Gandrud}\\
 
 This is an excellent text on project management. Not only does it cover dynamic document generation via knitr, but also project integration and version control with git and github.
