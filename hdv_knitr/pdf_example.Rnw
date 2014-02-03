@@ -47,7 +47,7 @@
 \end{center}
 
 \begin{itemize}
-  \item LaTeX makes it easy for people to convey complex mathematcial notation via the internet or in print.
+  \item \LaTeX makes it easy for people to convey complex mathematcial notation via the internet or in print.
   \item This allows people to collaborate over great distances via websites like Stack Exchange or Mathoverflow. This rapidly increases the pace of innovation and discovery.
 \end{itemize}
 
@@ -58,7 +58,7 @@
 \end{center}
 
 \begin{itemize}
-  \item LaTeX is just a markup language. While it's great at displaying text, it cannot perform complex calculations (well maybe it can if you're extremely creative).
+  \item \LaTeX\, is just a markup language. While it's great at displaying text, it cannot perform complex calculations (well maybe it can if you're extremely creative).
   \item This limitation causes inexperienced users to produce research output using another language like R, copying and pasting source code and images from another IDE into a .tex file before compiling. This method, in addition to being inefficient, breaks the dependencies between the output and its source.
   \item This in turn makes it harder for the reasearcher to effectively communicate their findings and make their reasearch understandable and reproducible by their peers.
 \end{itemize}
@@ -106,7 +106,7 @@
 
 \begin{large}
 
-knitr is an R package developed by Yihui Xie that integrates LaTeX and R to produce dynamic documents. R is embedded within a \LaTeX document via sections called {\bfseries code chunks}:
+knitr is an R package developed by Yihui Xie that integrates \LaTeX\, and R to produce dynamic documents. R is embedded within a \LaTeX\, document via sections called {\bfseries code chunks}:
 
 \vspace{1cm}
 

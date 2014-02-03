@@ -1,0 +1,95 @@
+\documentclass{article}
+\usepackage{parskip}
+
+\begin{document}
+
+\title{\Huge An Interactive Example}
+\author{Gene Dan}
+\maketitle
+
+\newpage
+
+\begin{center}
+\section*{\LARGE CPUs}
+\end{center}
+
+\begin{large}
+This is an interactive example where I'll be guiding the audience on how to export visual output from an IDE (like RStudio) to a pdf. We will be using the {\bfseries cpus} dataset from the {\bfseries MASS} package.
+
+\vspace{1cm}
+
+As in the main presentation, we can simultaneously include code and its output within the same chunk:
+
+\vspace{1cm}
+
+<<>>=
+library(MASS)
+head(cpus[, c(1, 5, 8)])
+@
+
+\newpage
+
+However, sometimes when writing a technical document, you want to suppress the output while presenting the code. This gives you a little bit of breathing space to explain yourself before showing the output. We can achieve this by setting the {\bfseries eval} option to {\bfseries FALSE}:
+
+\vspace{1cm}
+<<eval=FALSE>>=
+library(MASS)
+head(cpus[, c(1, 5, 8)])
+@
+
+\vspace{1cm}
+
+You can see that we have the same two input lines as in the previous example, but with no output this time.
+
+\newpage
+
+Likewise, sometimes we want to show the output without expressing the code that was used to generate it. We can do so by setting the {\bfseries echo} option to {\bfseries FALSE}:
+
+\vspace{1cm}
+
+<<echo=FALSE>>=
+library(MASS)
+head(cpus[, c(1, 5, 8)])
+@
+
+\newpage
+
+We can plot the relative performance of cpus v.s. cache size using R's plotting capabilities. Set the option {\bfseries fig} to {\bfseries TRUE} in order to do this:
+
+\vspace{1cm}
+
+<<fig=TRUE, tidy=FALSE>>=
+plot(factor(cpus$cach), cpus$perf, las=2,
+main="CPU Performance by Cache Size",
+xlab="Cache Size (kilobytes)",
+ylab="Performance Relative to IBM 370/158-3")
+@
+
+\newpage
+
+As before, we can suppress the output:
+
+\vspace{1cm}
+
+<<fig=TRUE, eval=FALSE, tidy=FALSE>>=
+plot(factor(cpus$cach), cpus$perf, las=2,
+main="CPU Performance by Cache Size",
+xlab="Cache Size (kilobytes)",
+ylab="Performance Relative to IBM 370/158-3")
+@
+
+\newpage
+
+And likewise we can suppress the code used to generate the plot:
+
+\vspace{1cm}
+
+<<fig=TRUE, echo=FALSE, tidy=FALSE>>=
+plot(factor(cpus$cach), cpus$perf, las=2,
+main="CPU Performance by Cache Size",
+xlab="Cache Size (kilobytes)",
+ylab="Performance Relative to IBM 370/158-3")
+@
+
+\end{large}
+\end{document}
