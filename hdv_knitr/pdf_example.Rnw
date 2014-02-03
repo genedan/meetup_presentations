@@ -1,4 +1,5 @@
 \documentclass[oneside]{article}
+\usepackage[hidelinks]{hyperref}
 
 \begin{document}
 
@@ -26,14 +27,130 @@
 
 \newpage
 
-\center{\section*{\LaTeX}}
+\center{\section*{\LARGE \LaTeX}}
+
+\begin{large}
+  \LaTeX is a markup language that is popular amongst academics and technical writers for its ability to display mathematical notation:
+  
+  \[DB=\frac{1}{n}\sum^n_{i=1}\max_{i\neq j}\left(\frac{\sigma_i+sigma_j}{d(c_i,c_j)}\right)\]
+  \[D = \min_{1\leq i \leq n}\left\{\min_{1\leq j\leq n,i\neq j}\left\{\frac{d(i,j)}{\max_{1\leq k\leq n}d'(k)}\right\}\right\}\]
+  
+\vspace{1cm}
+
+\begin{center}
+  \bfseries{Advantages}
+\end{center}
+
+\begin{itemize}
+  \item LaTeX makes it easy for people to convey complex mathematcial notation via the internet or in print.
+  \item This allows people to collaborate over great distances via websites like Stack Exchange or Mathoverflow. This rapidly increases the pace of innovation and discovery.
+\end{itemize}
+
+\begin{center}
+  \bfseries{Disadvantages}
+\end{center}
+
+\begin{itemize}
+  \item LaTeX is just a markup language. While it's great at displaying text, it cannot perform complex calculations (well maybe it can if you're extremely creative).
+  \item This limitation causes inexperienced users to produce research output using another language like R, copying and pasting source code and images from another IDE into a .tex file before compiling. This method, in addition to being inefficient, breaks the dependencies between the output and its source.
+  \item This in turn makes it harder for the reasearcher to effectively communicate their findings and make their reasearch understandable and reproducible by their peers.
+\end{itemize}
+
+\end{large}
+  
+\newpage
+
+\center{\section*{\LARGE R}}
+
+\begin{large}
+  R is an open source statistical programming language.
+
+\vspace{1cm}
+  
+\begin{center}
+  \bfseries{Advantages}
+\end{center}
+
+\begin{itemize}
+  \item R is designed so that its objects closely resemble the mathematical objects that statisticians use. This makes it easy for statisticians to both learn the language and carry out their research on the computer.
+  \item R's open source platform makes it easy for anyone to debug and contribute.
+\end{itemize}
+
+\begin{center}
+  \bfseries{Disadvantages}
+\end{center}
+
+\begin{itemize}
+  \item R has limited capability for formatting and exporting output.
+  \item This makes creating books, documents, websites, slide shows, and other presentations labor-intensive and error-prone.
+  \item Fortunately, we can use knitr to address these shortcomings.
+\end{itemize}
+\end{large}
+  
+\newpage
+
+\center{\section*{\LARGE knitr}}
+
+\begin{large}
+
+\flushleft
+knitr is an R package developed by Yihui Xie that integrates LaTeX and R to produce dynamic documents. R is embedded within a \LaTeX document via sections called {\bfseries code chunks}:
+
+\vspace{1cm}
+
+<<>>=
+library(MASS)
+head(cpus[,c(1,5,8)])
+@
 
 \newpage
 
-\center{\section*{R}}
+Code chunks that appear later in the document can reference objects that appear in previous code chunks. Here, we produce a figure that references cpus from the package MASS:
+
+<<fig=TRUE, tidy=FALSE>>=
+plot(factor(cpus$cach), cpus$perf, las=2,
+main="CPU Performance by Cache Size",
+xlab="Cache Size (kilobytes)",
+ylab="Performance Relative to IBM 370/158-3")
+@
 
 \newpage
 
-\center{\section*{knitr}}
+{\bfseries Additional Languages}
+
+\begin{itemize}
+\item R is not the only language! Other languages, such as Python, Perl, Ruby, and Bash can be embedded in code chunks. These chunks will be evaluated at compilation with output printed onto the document.
+\item In addition to \LaTeX, knitr supports Markdown and HTML as markup languages.
+\end{itemize}
+
+\vspace{2cm}
+
+{\bfseries Additional Formats}
+
+\begin{itemize}
+\item PDFs are not the only documents that can be produced with knitr. You can use knitr to generate webpages and slide shows.
+\end{itemize}
+
+\end{large}
+
+\newpage
+
+\center{\section*{\LARGE Additional Resources}}
+
+\vspace{1cm}
+\begin{large}
+
+\flushleft
+{\bfseries Reproducible Research with R and RStudio - Christopher Gandrud}\\
+
+This is an excellent text on project management. Not only does it cover dynamic document generation via knitr, but also project integration and version control with git and github.
+
+\vspace{1cm}
+
+{\bfseries Dynamic Documents with R knitr - Yihui Xie}\\
+
+This is a book written by the creator of knitr. Covers both basic syntax and in-depth package configuration.
+
+\end{large}
 
 \end{document}
