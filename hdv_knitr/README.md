@@ -5,6 +5,8 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 
 knitr allows us to embed R code within Markdown documents. This combination of Markdown/R is then translated into html for display in web pages.
 
+You can immediately see in this example that knitr is useful for dynamic README files on github.
+
 The following code chunk loads the package UsingR which contains the dataset for our example:
 
 ```r
