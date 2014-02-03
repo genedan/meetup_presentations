@@ -32,7 +32,7 @@
 \begin{large}
   \LaTeX is a markup language that is popular amongst academics and technical writers for its ability to display mathematical notation:
   
-  \[DB=\frac{1}{n}\sum^n_{i=1}\max_{i\neq j}\left(\frac{\sigma_i+sigma_j}{d(c_i,c_j)}\right)\]
+  \[DB=\frac{1}{n}\sum^n_{i=1}\max_{i\neq j}\left(\frac{\sigma_i+\sigma_j}{d(c_i,c_j)}\right)\]
   \[D = \min_{1\leq i \leq n}\left\{\min_{1\leq j\leq n,i\neq j}\left\{\frac{d(i,j)}{\max_{1\leq k\leq n}d'(k)}\right\}\right\}\]
   
 \vspace{1cm}
