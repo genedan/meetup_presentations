@@ -1,0 +1,39 @@
+\documentclass[oneside]{article}
+
+\begin{document}
+
+\title{\Huge Dynamic Documents with R and knitr}
+\author{Gene Dan}
+\maketitle
+
+\newpage
+
+\center{\section*{\LARGE Literate Programming}}
+
+\vspace{1cm}
+
+\begin{large}
+  \begin{itemize}
+
+    \item Literate programming, conceived by Don Knuth, is a programming paradigm that combines numeric output with documentation.\\
+
+    \item Literate programming can be implemented via markup language (HTML, \LaTeX, Markdown, etc.), which describes the logic and output of a program written in a general-purpose langauge (C++, Python, Perl, etc.). The program code is embedded within the markup language in a text file. This file can then be compiled into a variety of different formats (.pdf, web pages, slideshows, etc.) for visual display.\\
+    
+    \item Today I'll demonstrate one implemntation of literate programming, using \LaTeX as our markup language to describe programs written in R. {\bfseries knitr}, an R package written by Yihui Xie, is used in the translation/compilation of code.
+
+\end{itemize}
+\end{large}
+
+\newpage
+
+\center{\section*{\LaTeX}}
+
+\newpage
+
+\center{\section*{R}}
+
+\newpage
+
+\center{\section*{knitr}}
+
+\end{document}
