@@ -10,9 +10,7 @@
 
 \newpage
 
-\begin{center}
-\section*{\LARGE CPUs}
-\end{center}
+\section*{CPUs}
 
 \begin{large}
 This is an interactive example where I'll be guiding the audience on how to export visual output from an IDE (like RStudio) to a pdf. We will be using the {\bfseries cpus} dataset from the {\bfseries MASS} package. This dataset includes performance metrics for varius cpus.
@@ -29,6 +27,8 @@ head(cpus[, c(1, 5, 8)])
 @
 
 \newpage
+
+\section*{Suppressing Output}
 
 However, sometimes when writing a technical document, you want to suppress the output while presenting the code. This gives you a little bit of breathing space to explain yourself before showing the output. We can achieve this by setting the {\bfseries eval} option to {\bfseries FALSE}:
 
@@ -54,6 +54,8 @@ head(cpus[, c(1, 5, 8)])
 @
 
 \newpage
+
+\section*{Plotting a Figure}
 
 We can plot the relative performance of cpus v.s. cache size using R's plotting capabilities. Set the option {\bfseries fig} to {\bfseries TRUE} in order to do this:
 
@@ -81,7 +83,9 @@ plot(factor(cpus$cach), cpus$perf, las=2,
 
 \newpage
 
-And likewise we can suppress the code used to generate the plot:
+\section*{Suppressing Code for Publication}
+
+And likewise we can suppress the code used to generate the plot. Sometimes, this is necessary when you are presenting to a non-technical audience (such as clients):
 
 \vspace{1cm}
 
@@ -93,4 +97,31 @@ plot(factor(cpus$cach), cpus$perf, las=2,
 @
 
 \end{large}
+
+\newpage
+
+\section*{Importing a Table of Values}
+
+Although we can show R output directly on the page, sometimes the default monospace font isn't appropriate for our audience (especially if we are dealing with non-technical people):
+
+\vspace{1cm}
+<<>>=
+cpus[1:20,c(1,2,3,4,5,8)]
+@
+
+\newpage
+
+We can remedy this situation by using the {\texttt xtable} package that converts R output into a \LaTeX\, table. We can suppress the code to produce a well-formatted table for professional publication:
+
+\vspace{1cm}
+
+<<echo=FALSE, results='asis', tidy=FALSE>>=
+library(MASS)
+library(xtable)
+print(xtable(cpus[1:20,c(1,2,3,4,5,8)],
+      caption="CPU Performance Relative to IBM 370/158-3"),
+      include.rownames=FALSE
+      )
+@
+
 \end{document}
